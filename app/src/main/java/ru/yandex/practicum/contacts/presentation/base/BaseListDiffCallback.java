@@ -14,4 +14,9 @@ public class BaseListDiffCallback<T extends ListDiffInterface<T>> extends DiffUt
     public boolean areContentsTheSame(@NonNull final T oldItem, @NonNull final T newItem) {
         return oldItem.equals(newItem);
     }
+
+    @Override
+    public Object getChangePayload(@NonNull final T oldItem, @NonNull final T newItem) {
+        return newItem;
+    }
 }
